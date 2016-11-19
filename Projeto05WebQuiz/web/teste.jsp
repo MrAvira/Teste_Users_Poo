@@ -24,8 +24,8 @@
 <%@include file="WEB-INF/jspf/header.jspf" %>
 <form class="form-inline">
     <%ArrayList<Question> teste = Quiz.getTeste();%>
-    <label for="nomeHome">Usuario: <%=sessao.getAttribute("sessao")%></label>
-    <input type="text" name="nome" value="<%=sessao.getAttribute("sessao")%>" readonly hidden/>
+    <label for="nomeHome">Usuario: <%=request.getParameter("nomeHome")%></label>
+    <input type="text" name="nome" value="<%=request.getParameter("nomeHome")%>" readonly hidden/>
     <%for (Question q : teste) {%>
     <h4><%= q.getQuestao()%></h4>
     <%for (String alternative : q.getAlternativas()) {%>

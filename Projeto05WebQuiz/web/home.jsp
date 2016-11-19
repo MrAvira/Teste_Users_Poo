@@ -6,6 +6,10 @@
 <%
     HttpSession sessao = request.getSession();
     ArrayList<Users> user = Quiz.getUser();
+    if(sessao.getAttribute("user")==null){
+        sessao.setAttribute("user", user);
+    }
+    user = (ArrayList<Users>) sessao.getAttribute("user");
 %>
 <h2>Regra de três simples é um processo prático para resolver problemas que envolvam quatro valores dos quais conhecemos três deles. </h2>
 <p>Devemos, portanto, determinar um valor a partir dos três já conhecidos.</p>
@@ -44,6 +48,8 @@
         <th>NOME</th>
         <th>ULTIMA NOTA</th>
         <th>MEDIA</th>
+        <th>QTD TESTES</th>
+        <th>SOMA %</th>
         <th></th>
     </tr>
     <% for (Users u : user) {%>
@@ -52,7 +58,13 @@
         <td><input type="text" name="nomeHome" class="form-control" value="<%=u.getName()%>" readonly/></td>
         <td><%= 100.0 * u.getUserLastGrade()%>%</td>
         <td><%= 100.0 * u.getUserGradeAverage()%>%</td>
+        <td><%= u.getUserTestsCount()%></td>
+        <td><%= 100.0 * u.getUserTestsGradeSum()%>%</td>
+        <%if(u.getUserType()!= 1){%>
         <td><input class="btn btn-success" type="submit" value="Iniciar Teste"/></td>
+        <%}else{%>
+        <td></td>
+        <%}%>
     </form>
 </tr>
 <%}%>

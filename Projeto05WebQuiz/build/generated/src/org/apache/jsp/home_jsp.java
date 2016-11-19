@@ -69,6 +69,10 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
     HttpSession sessao = request.getSession();
     ArrayList<Users> user = Quiz.getUser();
+    if(sessao.getAttribute("user")==null){
+        sessao.setAttribute("user", user);
+    }
+    user = (ArrayList<Users>) sessao.getAttribute("user");
 
       out.write("\r\n");
       out.write("<h2>Regra de três simples é um processo prático para resolver problemas que envolvam quatro valores dos quais conhecemos três deles. </h2>\r\n");

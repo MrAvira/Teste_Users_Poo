@@ -11,11 +11,11 @@ public class Quiz {
     public static ArrayList<Users> getUser() {
         if (user == null) {
             user = new ArrayList();
-            Users u0 = new Users("Leonardo da Vinci", 0, 0, 0);
-            Users u1 = new Users("Isaac Newton", 0, 0, 0);
-            Users u2 = new Users("Charles Darwin", 0, 0, 0);
-            Users u3 = new Users("Nikola Tesla", 0, 0, 0);
-            Users u4 = new Users("Albert Einstein", 0, 0, 0);
+            Users u0 = new Users("Leonardo da Vinci", 0, 0, 0,0);
+            Users u1 = new Users("Isaac Newton", 0, 0, 0,0);
+            Users u2 = new Users("Charles Darwin", 0, 0, 0,0);
+            Users u3 = new Users("Nikola Tesla", 0, 0, 0,0);
+            Users u4 = new Users("Albert Einstein", 0, 0, 0,0);
             user.add(u0);
             user.add(u1);
             user.add(u2);
@@ -85,7 +85,7 @@ public class Quiz {
     }
 
     public static void setUser(String nome) {
-        Users u = new Users(nome, 0, 0, 0);
+        Users u = new Users(nome, 0, 0, 0, 1);
         user.add(u);
     }
 

@@ -6,12 +6,14 @@ public class Users {
     private int userTestsCount;
     private double userTestsGradeSum;
     private double userLastGrade;
+    private int userType;
 
-    public Users(String name, int userTestsCount, double userTestsGradeSum, double userLastGrade) {
+    public Users(String name, int userTestsCount, double userTestsGradeSum, double userLastGrade,int userType) {
         this.name = name;
         this.userTestsCount = userTestsCount;
         this.userTestsGradeSum = userTestsGradeSum;
         this.userLastGrade = userLastGrade;
+        this.userType = userType;
     }
 
     public double getUserLastGrade() {
@@ -48,6 +50,14 @@ public class Users {
 
     public double getUserGradeAverage() {
         return userTestsGradeSum / (double) userTestsCount;
+    }
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 
 }
