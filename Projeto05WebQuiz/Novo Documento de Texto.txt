@@ -1,0 +1,6 @@
+http://docs.oracle.com/javaee/5/api/javax/servlet/http/HttpSession.html#setAttribute(java.lang.String, java.lang.Object)
+
+http://stackoverflow.com/questions/5766521/how-do-you-store-java-objects-in-httpsession
+
+https://www.caelum.com.br/apostila-java-web/spring-mvc-autenticacao-e-autorizacao/#12-4-configurando-o-tempo-limite
+
